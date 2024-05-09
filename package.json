@@ -1,0 +1,21 @@
+{
+  "name": "@xavescor/eslint-plugin-wrap-variables",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "vitest"
+  },
+  "type": "module",
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@typescript-eslint/parser": "^7.7.1",
+    "@typescript-eslint/rule-tester": "^7.7.1",
+    "@typescript-eslint/utils": "^7.7.1",
+    "path": "^0.12.7",
+    "typescript": "^5.4.5",
+    "vitest": "^1.5.2"
+  }
+}
