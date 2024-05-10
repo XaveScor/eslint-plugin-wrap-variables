@@ -2,7 +2,7 @@
   "name": "@xavescor/eslint-plugin-wrap-variables",
   "version": "0.0.1",
   "description": "",
-  "main": "dist/index.js",
+  "main": "dist/src/index.js",
   "files": [
     "dist"
   ],
