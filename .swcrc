@@ -4,7 +4,13 @@
       "node": "18"
     },
   },
+  "module": {
+    "type": "commonjs",
+    "strict": true,
+    "importInterop": "node",
+  },
   "jsc": {
+    "loose": true,
     "parser": {
       "syntax": "typescript",
     },

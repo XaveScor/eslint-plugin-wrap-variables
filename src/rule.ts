@@ -5,8 +5,6 @@ import {
   isStringLiteral,
 } from 'typescript';
 
-const createRule = ESLintUtils.RuleCreator((name) => name);
-
 const getterMethods = new Set(['get', 'spy']);
 const spyHooks = new Set(['useRender$', 'useMapped$', 'useEffect$'] as const);
 const getHooks = new Set(['useCallbackRef$'] as const);
@@ -28,6 +26,9 @@ function isStable(node: TSESTree.Identifier, context: TSESLint.RuleContext<strin
     const originalNode = parserServices.esTreeNodeToTSNodeMap.get(node);
     const type = checker.getTypeAtLocation(originalNode);
 
+    // type of node is an object like { property1: type1, property2: type2, ...,  kind: 'stable' }
+    // We are finding the 'kind' property because typescript is duck-typed, and type Stable<X> = X & { kind: "stable" };
+    // Look for the "resolvedProperties" field in `type` object
     const propertySignature = type.getProperty('kind')?.valueDeclaration;
     if (!isPropertySignature(propertySignature)) {
       return false;
@@ -99,8 +100,7 @@ function isShortProperty(node: TSESTree.Node) {
   return false;
 }
 
-export const eslintPluginObservableWrapVariables = createRule({
-  name: 'eslint-plugin-observable-wrap-variables',
+export const eslintPluginObservableWrapVariables = ESLintUtils.RuleCreator.withoutDocs({
   defaultOptions: [],
   meta: {
     type: 'suggestion',

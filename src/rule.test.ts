@@ -149,5 +149,16 @@ type StableY = Stable<(foo: Function) => void>;
 
 const A = (y: StableY, z: number) => {const z$ = useWrap$(z);return useMapped$((ctx) => y + ctx.spy(z$))}`,
     },
+    {
+      code: `type Stable<X> = X & { kind: "stable" };
+type StableY = Stable<(f1: number, f2: number, f3: number) => void>;
+
+const A = (y: StableY, z: number) => useMapped$((ctx) => () => y(1, 2, 3) + z)`,
+      errors: [{ messageId: 'variable' }],
+      output: `type Stable<X> = X & { kind: "stable" };
+type StableY = Stable<(f1: number, f2: number, f3: number) => void>;
+
+const A = (y: StableY, z: number) => {const z$ = useWrap$(z);return useMapped$((ctx) => () => y(1, 2, 3) + ctx.spy(z$))}`,
+    },
   ],
 });
