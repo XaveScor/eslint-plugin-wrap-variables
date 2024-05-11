@@ -1,6 +1,6 @@
 {
   "name": "@xavescor/eslint-plugin-wrap-variables",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "",
   "main": "dist/src/index.js",
   "types": "dist/index.d.ts",
@@ -16,7 +16,7 @@
   "license": "ISC",
   "dependencies": {
     "@typescript-eslint/parser": "^7.7.1",
-    "@typescript-eslint/utils": "^7.8.0",
+    "@typescript-eslint/utils": "^7.7.1",
     "typescript": "^5.4.3"
   },
   "peerDependencies": {
@@ -25,7 +25,7 @@
   "devDependencies": {
     "@swc/cli": "^0.3.12",
     "@swc/core": "^1.5.5",
-    "@typescript-eslint/rule-tester": "^7.8.0",
+    "@typescript-eslint/rule-tester": "^7.7.1",
     "path": "^0.12.7",
     "vitest": "^1.6.0"
   }
