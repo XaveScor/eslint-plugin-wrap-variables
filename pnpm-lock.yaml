@@ -9,10 +9,13 @@ importers:
   .:
     dependencies:
       '@typescript-eslint/parser':
-        specifier: ^7.8.0
+        specifier: ^7.7.1
         version: 7.8.0(eslint@8.57.0)(typescript@5.4.5)
+      eslint:
+        specifier: '>=8.56.0'
+        version: 8.57.0
       typescript:
-        specifier: ^5.4.5
+        specifier: ^5.4.3
         version: 5.4.5
     devDependencies:
       '@swc/cli':
