@@ -8,7 +8,7 @@ module.exports = {
     project: true,
     tsconfigRootDir: __dirname,
   },
-  extends: [
+  plugins: [
     '@xavescor/eslint-plugin-wrap-variables',
   ],
   rules: {
